@@ -1,0 +1,109 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}HichkiPichki.com{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='shree.png') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='shree.png') }}" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9914804597545313",
+    enable_page_level_ads: true
+  });
+</script>
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">
+                InnovateDevelops
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Interview Preparation</a>
+                    <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('main.interview_prep') }}">Python Basics</a></li>
+                            <li><a href="{{ url_for('main.bs_iq') }}">Bootstrap Interview Questions</a></li>
+                            <li><a href="{{ url_for('main.js_iq') }}">JavaScript Interview Questions</a></li>
+                            <li><a href="{{ url_for('main.py_iq') }}">Python Interview Questions</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                </li>
+                <li><a href="{{ url_for('main.index') }}">Contact Us</a></li>
+                 <!--<li><a href="{{ url_for('main.cinnamon') }}">Requirement</a></li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url_for('main.user', username=current_user.username) }}">{% if current_user.is_authenticated %}
+                 Hi, {% if current_user.is_authenticated %}{{ current_user.username }}{% endif %} 🙂</a><li>
+                     <li class="dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                             <img src="{{ current_user.gravatar(size=18) }}">  Account <b class="caret"></b>
+                         </a>
+                         <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('main.user', username=current_user.username) }}"><span class="glyphicon glyphicon-user"></span>
+                                Profile</a></li>
+                            <li><a href="{{ url_for('auth.change_password') }}"><span class="glyphicon glyphicon-lock"></span>
+                                Change Password</a></li>
+                            <li><a href="{{ url_for('auth.change_email_request') }}"><span class="glyphicon glyphicon-envelope"></span>
+                                Change Email</a></li>
+                            <li><a href="{{ url_for('auth.logout') }}"><span class="glyphicon glyphicon-log-out"></span>
+                                Log Out</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                <li><a href="{{ url_for('auth.login') }}"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div id="container" class="container">
+    <div class="row">
+        <div class="col-sm-10 offset-sm-1 text-left">
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+            </div>
+    </div>
+        {% endfor %}
+        {% block page_content %}
+        {% endblock %}
+  </div>
+</div>
+<div id="footer">
+    <p><center>© 2017-<script type="text/javascript">document.write(new Date().getFullYear());</script>2018 by HichkiPichki.</a></center></p>
+</div>
+<!--<div id="footer">-->
+      <!--{% block footer %}-->
+      <!--&copy; Copyright 2018 by <a href="http://">ready4interview</a>.-->
+      <!--{% endblock %}-->
+<!--</div>-->
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+    {{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
+{% endblock %}

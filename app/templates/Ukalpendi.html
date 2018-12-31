@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Ukalpendi{% endblock %}
+
+{% block page_content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8" style="background-color:lavender;">
+    <img src="{{ url_for('static', filename = 'Licorice-Roots.JPG') }} ">
+        <h3>Ukalpendi</h3>
+        <p>
+            Possesses anti-microbial properties: Liquorice root has anti-microbial properties. The root is particularly good in controlling bacterial strains. Apart from this, liquorice root has anti-fungal properties as well. It can control Arthrinium sacchari M001 and Chaetomium funicola M002, candida albicans, Mycobacterium smegmatis, etc.
+Has anti-oxidant properties: Liquorice root possesses anti-oxidants in large amounts. Anti-oxidants are some of the very important organic compounds that our body needs. Every day, our body produces free radicals, a certain type of organic chemical residues. These residues can damage our cells and tissues. The electrons release initially can actually perpetuate the further release of electrons from other cells. This can make free radicals a problematic issue. This overtime free radical damage can be reduced by the intake of anti-oxidant foods. The anti-oxidants present in liquorice root help in reducing the free radical activity to a great extent.
+Possesses anti-malarial properties: It might seem surprising, but liquorice root does show anti-malarial activity, as noted by WebMD. One study noted that the extracts from liquorice root completely eradicated malaria parasite, without any serious side effects. This is indeed a good news for both pharmaceutical companies as well as for individual concerned about malaria.
+Has shown anti-viral activity: liquorice root possesses anti-viral properties as well, apart from anti-microbial and anti-fungal properties. It has been noted that liquorice root can eliminate viruses such as vaccinia, herpes simplex, vesicular stomatitis virus, type A influenza virus, coronavirus, etc. The elimination of these viruses was noted to be more effective than standard anti-viral medications.
+Liquorice root a handy home remedy for reducing cough, dry throat and irritations. This is done as liquorice root stimulates the secretion of mucus in the throat, thereby reducing throat irritation and cough.
+Liquorice root possesses liver protective properties. studies have shown that it can decrease inflammation in liver caused by damage. And it also helped in reversing liver damage.
+       </p>
+<h4>Ingredients</h4>
+        <ul>
+            <li>1/2 cup Wheat flour (coarse) </li>
+            <li> 3 tbsp oil</li>
+            <li>1/4 cup onion, finely chopped</li>
+            <li>4 to 5 curry leaves</li>
+            <li>For tempering:- pinch of mustard seeds, 1/4 tsp hing, 1/8 tsp turmeric, 2 dried red chilies</li>
+            <li>1/2 cup plain sour yogurt, well beaten</li>
+            <li>1/4 cup water (tip 1)</li>
+            <li>Salt to taste</li>
+        </ul>
+
+        <h4>Method</h4>
+<ul>
+        <li>Heat 2 tbsp oil into a pan. Roast wheat flour over medium heat. Roast till color changes to light pink (around 5 minutes). Transfer roasted flour to a bowl.
+2) In that same pan, add 1 tbsp oil. Add mustard seeds, hing, turmeric powder, red chilies and curry leaves. Saute for few seconds and add onion. Mix well, add salt and cook onion till translucent.
+3) Add roasted flour. Mix nicely for couple of minutes. Mix yogurt and water. Stir well and add to the pan. Stir vigorously as the mixture will become doughy. So, act quickly to avoid lumps. Cover the pan and steam cook over low heat for few minutes.
+Garnish with cilantro and serve hot.
+        </li>
+</ul>
+    </div>
+
+    <div class="col-sm-4" style="background-color:lavenderblush;">
+        <h3><a href="{{ url_for('main.licorice_recipes') }}">Quick recipes of Licorice</a></h3></div>
+  </div>
+</div>
+{% endblock %}
