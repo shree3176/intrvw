@@ -36,3 +36,11 @@ class RequirementForm(FlaskForm):
 class PostForm(FlaskForm):
     body = TextAreaField("What's on your mind?", validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+
+class ContactForm(FlaskForm):
+    name = StringField("Name", validators=[DataRequired])
+    email = StringField("Email", validators=[DataRequired])
+    subject = StringField("Subject", validators=[DataRequired])
+    message = TextAreaField("Message", validators=[DataRequired])
+    submit = SubmitField("Send")

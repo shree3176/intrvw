@@ -16,6 +16,7 @@ class Config:
     SANSKRITY_ADMIN = os.environ.get('SANSKRITY_ADMIN')
     SSL_REDIRECT = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    FLASKY_POSTS_PER_PAGE = 10
 
     @staticmethod
     def init_app(app):

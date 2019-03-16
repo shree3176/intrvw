@@ -1,6 +1,6 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}HichkiPichki.com{% endblock %}
+{% block title %}InterviewReady.com{% endblock %}
 
 {% block head %}
 {{ super() }}
@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{ url_for('main.index') }}">
-                InnovateDevelops
+                InterviewReady
             </a>
         </div>
         <div class="navbar-collapse collapse">
@@ -44,7 +44,7 @@
                             <li><a href="#">Help</a></li>
                         </ul>
                 </li>
-                <li><a href="{{ url_for('main.index') }}">Contact Us</a></li>
+                <li><a href="{{ url_for('main.contact_us') }}">Contact Us</a></li>
                  <!--<li><a href="{{ url_for('main.cinnamon') }}">Requirement</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -93,13 +93,8 @@
   </div>
 </div>
 <div id="footer">
-    <p><center>© 2017-<script type="text/javascript">document.write(new Date().getFullYear());</script>2018 by HichkiPichki.</a></center></p>
+    <p><center>© 2017-<script type="text/javascript">document.write(new Date().getFullYear());</script> by InterviewReady.com</a></center></p>
 </div>
-<!--<div id="footer">-->
-      <!--{% block footer %}-->
-      <!--&copy; Copyright 2018 by <a href="http://">ready4interview</a>.-->
-      <!--{% endblock %}-->
-<!--</div>-->
 {% endblock %}
 
 {% block scripts %}
