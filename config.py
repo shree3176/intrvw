@@ -40,8 +40,8 @@ class TestingConfig(Config):
 class ProductionConfig(Config):
     # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     # pushed local db to remote
-    SQLALCHEMY_DATABASE_URI = "postgres://jxqryrhydozgpw:cf18d5231299e255c29c50068a0cc398f080873d4cf" \
-                              "3b0152e7c107a982667f7@ec2-50-16-196-238.compute-1.amazonaws.com:5432/d8oehp79kvc7r1"
+    SQLALCHEMY_DATABASE_URI = "postgres://oimnlkvqkzrqft:72f96567f7bac9b0ccffcb64ed1b6e4081f08ea2406069d" \
+                              "1bae6d84a8407532c@ec2-184-73-181-132.compute-1.amazonaws.com:5432/de1fdee9pok5nh"
 
 
 # class HerokuConfig(ProductionConfig):
