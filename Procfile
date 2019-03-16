@@ -1,1 +1,1 @@
-web: gunicorn interview-app:app
+web: gunicorn interviewapp:app
