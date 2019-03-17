@@ -5,25 +5,19 @@
 {% block title %}InterviewReady.com{% endblock %}
 
 {% block page_content %}
-<!--<div class="page-header">-->
-
-<!--</div>-->
-
 <div class="container">
     <div class="row">
-
         <div class="col-md-8">
+          {{ wtf.quick_form(form) }}
 
-             {{ wtf.quick_form(form) }}
-                {% include '_posts.html' %}
-            {% if pagination %}
+          {% include '_posts.html' %}
+
+          {% if pagination %}
             <div class="pagination">
                  {{ macros.pagination_widget(pagination, '.index') }}
             </div>
-            {% endif %}
-
+          {% endif %}
         </div>
-
 
         <div class="col-md-4 sidebar-bg" style="background: #eee;">
             <div id="sidebar">
@@ -39,11 +33,10 @@
                         <a href="">LinkedIn</a>, <a href="">Github</a> and <a href="">Twitter</a>.</p>
                     <p>Thank you for visiting!</p>
                 </div>
-            </div>
-
+        </div>
     </div>
-
 </div>
+
 {% endblock %}
 {% block scripts %}
 {{ super() }}
