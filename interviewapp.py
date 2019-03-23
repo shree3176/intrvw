@@ -6,7 +6,7 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_moment import Moment
 
 from app import create_app, db
-from app.models import User, Role, Post
+from app.models import User, Follow, Role, Post, Permission
 
 app = create_app(os.getenv('INTERVIEW_CONFIG') or 'default')
 manager = Manager(app)
@@ -19,7 +19,7 @@ with app.app_context():
 
 @app.shell_context_processor
 def make_shell_context():
-    return dict(app=app, db=db, User=User, Role=Role, Post=Post)
+    return dict(app=app, db=db, User=User, Role=Role, Permission=Permission, Post=Post, Follow=Follow)
 
 
 manager.add_command("shell", Shell(make_context=make_shell_context))
