@@ -187,6 +187,9 @@ def js_iq():
 def py_iq():
     return render_template('python-interview-questions.html')
 
+@main.route('/java_eight_interfaces')
+def java_eight():
+    return render_template('java_eight_interfaces.html')
 
 @main.route('/contact_us')
 def contact_us():
