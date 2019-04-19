@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Project Details{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h2>Java 8 Interfaces</h2>
+</div>
+<div class="col-md-4 centered">
+    {{ wtf.quick_form(form) }}
+</div>
+<div class="col-md-8 well well-lg">
+    <ul>
+        <li>We are a team of enthusiast software developers, can help you provide your software solution.</li>
+        <li></li>
+<p>Static methods are considered as utility methods.</p>
+<p> Default methods enable you to add new functionalityto the interfaces of your libraries and ensure binary compatibility with code
+    written for older versions of those interfaces.</p>
+    You specify that a method definition in an interface is a default method with the default keyword at the beginning of the method 
+    signature. All method declarations in an interface, including default methods, are implicitly public, so you can omit the public
+        modifier.
+           Extending Interfaces That Contain Default Methods
+When you extend an interface that contains a default method, you can do the following:
+Not mention the default method at all, which lets your extended interface inherit the default method.
+Redeclare the default method, which makes it abstract.
+Redefine the default method, which overrides it.
+    </ul>
+    <br>
+    <br>
+    <br>
+
+</div>
+{% endblock %}
