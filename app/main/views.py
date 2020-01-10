@@ -61,22 +61,23 @@ def edit_profile():
     return render_template('edit_profile.html', form=form)
 
 
-@main.route('/', methods=['GET', 'POST'])
+@main.route('/')
 def index():
-    form = PostForm()
-    if form.validate_on_submit():
-        post = Post(body=form.body.data, author=current_user._get_current_object())
-        db.session.add(post)
-        db.session.commit()
-        flash('Post saved.')
-        return redirect(url_for('.index'))
-    page = request.args.get('page', 1, type=int)
-    pagination = Post.query.order_by(Post.post_date.desc()).paginate(
-        page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
-        error_out=False)
-    posts = pagination.items
-    return render_template('index.html', form=form, posts=posts,
-                           pagination=pagination)
+    return render_template('bootstrap-interview-questions.html')
+    # form = PostForm()
+    # if form.validate_on_submit():
+    #     post = Post(body=form.body.data, author=current_user._get_current_object())
+    #     db.session.add(post)
+    #     db.session.commit()
+    #     flash('Post saved.')
+    #     return redirect(url_for('.index'))
+    # page = request.args.get('page', 1, type=int)
+    # pagination = Post.query.order_by(Post.post_date.desc()).paginate(
+    #     page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
+    #     error_out=False)
+    # posts = pagination.items
+    # return render_template('index.html', form=form, posts=posts,
+    #                        pagination=pagination)
 
 
 @main.route('/post/<int:id>')
