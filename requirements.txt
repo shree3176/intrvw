@@ -42,5 +42,5 @@ times==0.7
 tzlocal==1.5.1
 visitor==0.1.3
 webencodings==0.5.1
-Werkzeug==0.13
+Werkzeug==0.15.3
 WTForms==2.1
